@@ -80,7 +80,7 @@ ips = [
 ]
 
 Article.delete_all
-100.times do
+2000.times do
 	article = Article.create(
     title: Forgery('name').first_name,
     content: Forgery('lorem_ipsum').paragraph,

@@ -49,7 +49,7 @@ class Article < ActiveRecord::Base
   }
 
   scope :neighbors, lambda {
-    where(ip: Article.select("ip").group("ip").having("COUNT(ip) > ?", 1))
+    where(ip: Article.select("ip").group("ip").having("COUNT(ip) > ?", 1)).group('author')
   }
 
   def category_title

@@ -13,7 +13,7 @@ module WillPaginateHelper
 				target = url(target)
 				attributes[:href] = target
 			end
-			ajax_call = "$.ajax({url: '#{target}', dataType: 'html', success: function(data){$('#wrap_table').html(data);} });"
+			ajax_call = "$.ajax({url: '#{target}', dataType: 'html', success: function(data){ $('#main_container').html(data); } });"
 			@template.link_to_function(text.to_s.html_safe, ajax_call, attributes)
 		end
 	end
