@@ -1,0 +1,38 @@
+<h2><%= @article.title %> <%= link_to t('button.article.edit'), edit_article_path(@article), class: "btn btn-link edit-article" %></h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <h5><%= @article.title %></h5>
+    <p><%= @article.content %></p>
+    <ul>
+      <li>Категория: <%= @article.category_title %></li>
+      <li>Автор: <%= @article.author %></li>
+      <li>IP автора: <%= @article.ip %></li>
+      <li>Рейтинг статьи: <%= @article.rating %></li>
+      <li>Комментариев: <%= @article.count_comments %></li>
+      <li>Дата: <%= @article.date.strftime('%d.%m.%Y') %></li>
+    </ul>
+    <% unless @article.comments.empty? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Комментарий</th>
+            <th>Оценка</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @article.comments.each do |comment| %>
+          <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.rating %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-info">Комментариев нет</div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag "articles" %>

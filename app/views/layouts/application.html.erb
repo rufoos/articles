@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Блог 1.0</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <h3><span class="icon-list-alt"></span> Блог 1.0</h3>
+    <ul class="nav nav-tabs" id="top_menu">
+      <% top_menu.each do |menu| %>
+        <li class="<%= menu[:link] == request.fullpath ? "active" : "" %>"><%= link_to menu[:text], menu[:link] %></li>
+      <% end %>
+      <li class="pull-right <%= new_article_path == request.fullpath ? "active" : "" %>"><%= link_to t('button.article.new'), new_article_path %></li>
+    </ul>
+    <div class="row">
+      <div class="span12" id="main_container"><%= yield %></div>
+    </div>
+  </div>
+</body>
+</html>

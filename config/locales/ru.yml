@@ -1,0 +1,46 @@
+ru:
+  activerecord:
+    attributes:
+      article:
+        title: "Заголовок"
+        content: "Содержание"
+        author: "Автор"
+        ip: "IP адрес"
+        date: "Дата"
+        rating: "Рейтинг"
+        category_title: "Категория"
+      categories:
+        title: "Категория"
+      comments:
+        rating: "Оценка"
+    errors:
+      messages:
+      blank: "Поле '%{attribute}' не может быть пустым"
+      less_than_or_equal_to: "Поле '%{attribute}' должно быть меньше или равно %{count}"
+      greater_than_or_equal_to: "Поле '%{attribute}' должно быть больше или равно %{count}"
+      invalid: "Поле '%{attribute}' не соответсвует формату"
+
+  flash:
+    saved: "Запись успешно сохранена"
+    not_saved: "Запись не удалось сохранить"
+    updated: "Запись успешно обновлена"
+    not_updated: "Запись не удалось обновить"
+    locked: "Запись редактируется другим пользователем. Откройте её заново чтобы посмотреть изменения"
+
+  button:
+    article:
+      new: "Добавить статью"
+      create: "Создать статью"
+      update: "Сохранить статью"
+      edit: "Редактировать"
+
+  title:
+    default: "Статьи"
+    index: "Все статьи"
+    search: "Найденные статьи"
+    top10: "Топ 10 статей"
+
+  menu:
+    articles: "Все статьи"
+    top_10_articles: "Топ 10"
+    neighbors_articles: "Соседи"

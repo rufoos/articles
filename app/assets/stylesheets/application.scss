@@ -1,0 +1,46 @@
+/*
+ *= require jquery-ui
+ *= require_self
+ *= require_tree .
+ */
+
+.flash-message{
+  display: none;
+  ul{
+    list-style-type: none;
+    margin: 0;
+  }
+}
+.article-categories{
+  #category_title{
+    margin-bottom: 0;
+  }
+  .ratings-list{
+    margin: 0;
+    list-style-type: none;
+    li{
+      margin: 0 0 10px 0;
+      &.removed{
+        opacity: 0.3;
+      }
+      input[type=text]{
+        margin-bottom: 0;
+        margin-right: 5px;
+      }
+      .subject-rating{
+        width: 50px;
+      }
+    }
+    
+  }
+}
+.search-form{
+  .control-group{
+    display: inline-block;
+    margin: 0 5px 0 0;
+    input{ margin-bottom: 0; }
+  }
+  .controls-rating{
+    input[type=text]{ width: 50px; }
+  }
+}

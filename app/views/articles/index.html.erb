@@ -1,0 +1,35 @@
+<h2>Поиск статей</h2>
+<%= form_tag search_articles_path, method: :get, class: "form search-form", id: "search_articles" do %>
+  <div class="control-group">
+    <%= label_tag "search_rating", "Рейтинг", class: "control-label" %>
+    <div class="controls-rating">
+      <%= text_field_tag "search[rating_from]", "", placeholder: "от" %>
+      <%= text_field_tag "search[rating_to]", "", placeholder: "до" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag "search_category", "Категория" %>
+    <%= text_field_tag "search[category_title]" %>
+  </div>
+  <div class="control-group">
+    <%= label_tag "search_author", "Автор" %>
+    <%= text_field_tag "search[author]" %>
+  </div>
+  <div class="control-group">
+    <%= label_tag "search_count_comments", "Кол-во комментариев" %>
+    <%= text_field_tag "search[count_comments]" %>
+  </div>
+  <div class="control-group">
+    <%= label_tag "search_date", "Дата" %>
+    <%= text_field_tag "search[date]", '', class: "datepicker" %>
+  </div>
+  <%= submit_tag "Найти", class: "btn btn-primary" %>
+<% end %>
+
+<div id="wrap_table">
+	<%= render "table" %>
+</div>
+
+<div id="wrap_article"></div>
+
+<%= javascript_include_tag "articles" %>
